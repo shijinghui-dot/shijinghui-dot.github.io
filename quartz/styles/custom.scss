@@ -82,3 +82,18 @@ a.internal {
     color: var(--gray);
   }
 }
+
+// 右侧目录：当前阅读章节高亮行（飞书风格）
+ul.toc-content > li > a {
+  display: block;
+  padding: 2px 8px;
+  margin: 1px 0;
+  border-radius: 4px;
+
+  &.toc-active {
+    color: var(--secondary) !important;
+    opacity: 1 !important;
+    background-color: var(--highlight);
+    font-weight: 600;
+  }
+}
