@@ -3,7 +3,6 @@ title: MySQL实战45讲 · 面试题精选
 description: 基于《MySQL实战45讲》全 45 讲整理，约 200 道高频面试问答，便于快速复习
 tags:
   - MySQL
-  - 面试
 ---
 
 # MySQL实战45讲 · 面试题精选
