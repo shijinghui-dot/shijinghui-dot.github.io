@@ -43,6 +43,20 @@ export default (() => {
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+        {/* mermaid 本地自托管：把 OFM 插件硬编码的 cdnjs 地址映射到站点内文件（国内访问 cdnjs 不稳定） */}
+        <script
+          type="importmap"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              imports: {
+                "https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs":
+                  "/static/mermaid/11.4.0/mermaid.esm.min.mjs",
+                "https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/":
+                  "/static/mermaid/11.4.0/",
+              },
+            }),
+          }}
+        />
         {coreStylesheet && <link rel="preload" href={coreStylesheet} as="style" />}
         {coreScript && coreScript.contentType === "external" && (
           <link rel="preload" href={coreScript.src} as="script" />
