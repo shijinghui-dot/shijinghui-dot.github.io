@@ -126,6 +126,7 @@ tags:
 
 **A：** 索引因删除、页分裂产生空洞后，重建能让数据页重新紧凑、省空间。普通索引用两条 alter：drop index k 再 add index(k)，合理。但主键不能这样连做：drop primary key 和 add primary key 都会触发整表重建，两条先后执行等于重建两遍，第一条白做；正确做法是直接一条 alter table T engine=InnoDB，同时完成表和主键的重建。
 
+
 ---
 
 # MySQL实战45讲 面试题精选（06-11）
@@ -245,6 +246,7 @@ tags:
 **Q：给字符串字段建索引一共有哪几种方案？各自的取舍是什么？**
 
 **A：** ①整字段索引：无额外扫描、可用覆盖索引，但占空间大；②前缀索引：省空间，代价是可能多扫行且用不上覆盖索引；③倒序存储+前缀索引：解决头部区分度差的问题，不占额外空间、CPU 消耗小，但不支持范围查询；④hash 字段索引：4 字节定长、查询性能最稳定，但有额外存储和函数计算，同样不支持范围扫描。按字段特点与查询模式选择。
+
 
 ---
 
@@ -402,6 +404,7 @@ tags:
 
 **A：** 不能。索引只保证"同一城市内 name 有序"，in 多个值时跨城市的数据整体不再有序，优化器仍需排序。优化思路：按城市拆成多条语句，每条都利用索引免排序取本城市的 Top-N，客户端再做归并——用"一次大排序"换"N 次小索引扫描"的经典取舍。
 
+
 ---
 
 # MySQL实战45讲 面试题精选（18-23）
@@ -537,6 +540,7 @@ tags:
 **Q：从客户端视角，crash-safe 给出的是什么样的承诺？**
 
 **A：** 三条语义：①收到"成功"，事务一定已持久化，redo 与 binlog 都已落盘；②收到"失败"，事务一定没有提交成功；③收到超时、断连等"不确定"结果，应重连后查询状态再决定重试还是放弃，不能盲目重发。数据库只负责自身内部一致（数据与日志、主备之间），"不确定就先查询"是应用层的职责，这个模型适用于几乎所有存储系统。
+
 
 ---
 
@@ -682,6 +686,7 @@ tags:
 
 **A：** MySQL 5.6+ 在 performance_schema.file_summary_by_event_name 按事件统计每次 IO 耗时：redo log 对应 wait/io/file/innodb/innodb_log_file，binlog 对应 wait/io/file/sql/binlog，含次数及 SUM/MIN/AVG/MAX 耗时（皮秒）。定时查询 MAX_TIMER_WAIT 超阈值（如 200ms）即判异常，处理后 truncate 清空统计重新累积。全开约损耗 10% 性能，建议只开需要的项；它是数据库内部视角，能发现外部轮询发现不了的问题。
 
+
 ---
 
 # MySQL实战45讲 面试题精选（30-35）
@@ -805,6 +810,7 @@ tags:
 **Q：当时 MySQL 不支持 hash join，应用端如何自己实现等价优化？**
 
 **A：** 思路是把 M*N 次比较改成哈希查找：①select 驱动表（过滤后的小结果集），在业务端放入 hash 结构（如各语言的 map/set）；②select 被驱动表中满足条件的行；③逐行到 hash 表中匹配，命中即拼接输出。总操作量降为 M+N 级，理论性能优于临时表方案。文中例子：10 亿次比较的 BNL join，改用"临时表+索引"后总耗时从 1 分 11 秒降到 1 秒内，hash join 可更快（MySQL 8.0.18 起已原生支持）。
+
 
 ---
 
@@ -934,9 +940,10 @@ tags:
 
 **A：** 三种取值三种效果：①设为某个目录——读写只能发生在该目录及其子目录下；②NULL——禁止 outfile 导出；③空串——不限制，但不安全，生产不建议。遇到 "The MySQL server is running with the --secure-file-priv option" 报错时，先 show variables like 'secure_file_priv' 确认可用目录。
 
+
 ---
 
-# MySQL实战45讲 面试题精选（42-45）
+# MySQL实战45讲 面试题精选（42-结束语）
 
 ## 42 grant之后要跟着flush privileges吗？
 
@@ -996,6 +1003,7 @@ tags:
 
 **A：** 不会。statement 格式下每个 insert 语句写入 binlog 时，前面都会带一条 `SET INSERT_ID=N`，显式指定该语句要用的自增值。即使主库上事务 A 拿 id=1、事务 B 拿 id=2，但提交顺序是 B 先 A 后，binlog 里记录的也是"SET INSERT_ID=2; 语句B; SET INSERT_ID=1; 语句A"，备库按序重放后各自 id 与主库一致。这也是 row 格式不需要该机制的原因——row 事件直接记录每行完整字段值。
 
+
 **Q：NULL 的比较规则是什么？它如何让 left join 退化成 inner join？**
 
 **A：** NULL 与任何值比较（包括 NULL=NULL、NULL!=0）结果都是 NULL，而 where/on 子句只保留结果为 true 的行。所以把"被驱动表的过滤条件"写到 where 里时，未匹配行（被驱动表字段全为 NULL）判断结果为 NULL，直接被过滤掉，left join 就退化成了 inner join；想保留 left join 语义，被驱动表的过滤条件必须写在 on 里。
@@ -1024,3 +1032,5 @@ tags:
 **Q：select...for update 算只读事务吗？**
 
 **A：** 不算。它属于当前读并申请了锁，InnoDB 会为其分配 trx_id，与普通读写事务一样受 trx_id 体系约束（包括 max_trx_id 用完的边界问题）。判断一个事务是否"只读"要看是否分配 trx_id，而不是看语句有没有写数据。
+
+
