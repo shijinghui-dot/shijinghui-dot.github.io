@@ -1,10 +1,16 @@
 /**
  * 背景音乐：首次交互后自动播放，右下角喇叭按钮控制静音/恢复
- * 音频文件：/static/music/bgm.mp3（用户自行放置，缺失时按钮自动隐藏）
+ * 曲目列表：/static/music/track*.mp3（随机顺序循环播放）
  */
 
 const BGM_KEY = "bgm-muted"
-const BGM_SRC = "/static/music/bgm.mp3"
+const TRACKS = [
+  "/static/music/bgm.mp3",
+  "/static/music/track1.mp3",
+  "/static/music/track2.mp3",
+  "/static/music/track3.mp3",
+  "/static/music/track4.mp3",
+]
 
 function setupBgm() {
   if (document.getElementById("bgm-toggle")) return // 已初始化（元素挂在 html 上，SPA 导航不销毁）
@@ -13,11 +19,20 @@ function setupBgm() {
 
   const audio = document.createElement("audio")
   audio.id = "bgm-audio"
-  audio.src = BGM_SRC
-  audio.loop = true
-  audio.volume = 0.25
+  audio.style.display = "none"
   audio.preload = "auto"
-  ;(audio as HTMLAudioElement).style.display = "none"
+  audio.volume = 0.25
+  // 随机播放顺序（洗牌）
+  let playlist = [...TRACKS].sort(() => Math.random() - 0.5)
+  let index = 0
+  audio.src = playlist[0]
+
+  const playNext = () => {
+    index = (index + 1) % playlist.length
+    audio.src = playlist[index]
+    audio.play().catch(() => {})
+  }
+  audio.addEventListener("ended", playNext)
 
   const btn = document.createElement("button")
   btn.id = "bgm-toggle"
@@ -45,9 +60,10 @@ function setupBgm() {
     localStorage.setItem(BGM_KEY, "1")
     render()
   })
-  // 音频文件缺失：隐藏按钮
+  // 所有曲目缺失：隐藏按钮
   audio.addEventListener("error", () => {
-    btn.style.display = "none"
+    const allMissing = playlist.every((src, i) => i === index)
+    if (allMissing) btn.style.display = "none"
   })
 
   document.documentElement.appendChild(audio)
