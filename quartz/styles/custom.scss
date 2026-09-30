@@ -1,3 +1,17 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// 内部链接：去掉背景色块，用纯文字链接（更接近知识库风格）
+a.internal {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// 首页知识库入口列表：卡片式悬停效果
+article > ul > li {
+  margin: 0.3rem 0;
+}
