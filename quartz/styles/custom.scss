@@ -1,6 +1,50 @@
 @use "./variables.scss" as *;
 
-// 内部链接：去掉背景色块，用纯文字链接（更接近知识库风格）
+// ===== 飞书风格排版优化 =====
+
+// 全局中文字体栈（接近飞书文档渲染效果）
+body,
+article,
+.page-title {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Noto Sans SC",
+    sans-serif;
+}
+
+// 正文：行高与字号更舒适
+article {
+  line-height: 1.85;
+  font-size: 1.02rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  h2 {
+    margin-top: 2.2rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+}
+
+// 文章标题区（标题 + 修改时间）更紧凑
+.article-title {
+  margin-bottom: 0.2rem;
+}
+
+// 内部链接：纯文字样式，去掉背景色块
 a.internal {
   background-color: transparent;
   padding: 0;
@@ -11,7 +55,30 @@ a.internal {
   }
 }
 
-// 首页知识库入口列表：卡片式悬停效果
-article > ul > li {
-  margin: 0.3rem 0;
+// 左侧栏：浅灰背景 + 右侧细分隔线（对应飞书知识库导航栏）
+@media all and not (max-width: 800px) {
+  .sidebar {
+    background-color: #f7f8fa;
+    border-right: 1px solid var(--lightgray);
+
+    [data-theme="dark"] & {
+      background-color: #1a1a1c;
+      border-right: 1px solid var(--lightgray);
+    }
+  }
+}
+
+// 左侧目录树：更紧凑的层级
+.explorer ul {
+  li {
+    margin: 1px 0;
+  }
+}
+
+// 右侧目录（大纲）标题样式
+.toc {
+  .toc-title {
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
 }
