@@ -31,9 +31,33 @@ function setupTocSpy() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
       current = heads[heads.length - 1]
     }
+    let activeLink: HTMLAnchorElement | undefined
     for (const a of links) {
-      a.classList.toggle("toc-active", a.getAttribute("data-for") === current.id)
+      const isCurrent = a.getAttribute("data-for") === current.id
+      a.classList.toggle("toc-active", isCurrent)
+      if (isCurrent) activeLink = a
     }
+    if (activeLink) centerTocItem(activeLink)
+  }
+
+  /** 目录过长时，把当前高亮项滚动到目录面板可视范围（居中） */
+  function centerTocItem(link: HTMLAnchorElement) {
+    // 向上找到实际可滚动的目录容器
+    let scroller: HTMLElement | null = link.parentElement as HTMLElement | null
+    while (scroller && scroller.scrollHeight <= scroller.clientHeight + 1) {
+      scroller = scroller.parentElement
+      if (!scroller || scroller === document.body) return
+    }
+    if (!scroller) return
+
+    const cr = scroller.getBoundingClientRect()
+    const ar = link.getBoundingClientRect()
+    // 已完全在可视范围内则不滚动，避免抖动
+    if (ar.top >= cr.top && ar.bottom <= cr.bottom) return
+
+    const target =
+      scroller.scrollTop + (ar.top - cr.top) - cr.height / 2 + ar.height / 2
+    scroller.scrollTo({ top: Math.max(0, target), behavior: "smooth" })
   }
 
   let ticking = false
