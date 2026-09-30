@@ -158,6 +158,8 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      filterFn: "(node) => node.slugSegment !== 'tags' && node.slugSegment !== '图片和附件'"
     layout:
       position: left
       priority: 50
