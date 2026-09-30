@@ -1,0 +1,17 @@
+
+[42m[30m Quartz v5.0.0 [39m[49m 
+
+Cleaned output directory `public` in 73ms
+Found 7 input files from `content` in 29ms
+Parsing input files using 1 threads
+
+Warning: content/Excalidraw/Drawing 2026-09-30 13.37.03.excalidraw.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/数据库/未命名.md isn't yet tracked by git, dates will be inaccurate
+Parsed 7 Markdown files in 5s
+Filtered out 1 files in 125μs
+Emitting files
+Emitted 405 files to `public` in 2s
+Done processing 7 files in 7s
+Started a Quartz server listening at http://localhost:8080
+hint: exit with ctrl+c

@@ -904,7 +904,7 @@ tags:
 **Q：statement 格式 binlog 下，主库两个事务获取自增 id 的顺序与写 binlog 顺序相反，备库重放会主键错乱吗？**
 
 **A：** 不会。statement 格式下每个 insert 语句写入 binlog 时，前面都会带一条 `SET INSERT_ID=N`，显式指定该语句要用的自增值。即使主库上事务 A 拿 id=1、事务 B 拿 id=2，但提交顺序是 B 先 A 后，binlog 里记录的也是"SET INSERT_ID=2; 语句B; SET INSERT_ID=1; 语句A"，备库按序重放后各自 id 与主库一致。这也是 row 格式不需要该机制的原因——row 事件直接记录每行完整字段值。
-
+- [ ] 
 ## 45 自增id用完怎么办？
 
 **Q：表定义的自增主键 id 达到上限后会发生什么？如何规避？**
