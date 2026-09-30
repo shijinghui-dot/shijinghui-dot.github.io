@@ -15,3 +15,213 @@ Emitted 405 files to `public` in 2s
 Done processing 7 files in 7s
 Started a Quartz server listening at http://localhost:8080
 hint: exit with ctrl+c
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 0 Markdown files in 543μs
+Filtered out 0 files in 39μs
+Emitted 11 files to `public` in 52ms
+Done rebuilding in 54ms
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 75ms
+Found 6 input files from `content` in 12ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 519ms
+Filtered out 0 files in 38μs
+Emitting files
+Emitted 402 files to `public` in 1s
+Done processing 6 files in 2s
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 70ms
+Found 6 input files from `content` in 7ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 252ms
+Filtered out 0 files in 36μs
+Emitting files
+Emitted 402 files to `public` in 1000ms
+Done processing 6 files in 1s
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 66ms
+Found 6 input files from `content` in 6ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 569ms
+Filtered out 0 files in 35μs
+Emitting files
+Emitted 402 files to `public` in 1s
+Done processing 6 files in 2s
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 23ms
+Filtered out 0 files in 19μs
+Emitted 13 files to `public` in 149ms
+Done rebuilding in 154ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 24ms
+Filtered out 0 files in 22μs
+Emitted 13 files to `public` in 133ms
+Done rebuilding in 134ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 351ms
+Filtered out 0 files in 26μs
+Emitted 15 files to `public` in 588ms
+Done rebuilding in 591ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 276ms
+Filtered out 0 files in 18μs
+Emitted 15 files to `public` in 483ms
+Done rebuilding in 484ms
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 86ms
+Found 7 input files from `content` in 14ms
+Parsing input files using 1 threads
+Parsed 7 Markdown files in 607ms
+Filtered out 0 files in 36μs
+Emitting files
+Emitted 408 files to `public` in 1s
+Done processing 7 files in 2s
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 412ms
+Filtered out 0 files in 35μs
+Emitted 13 files to `public` in 622ms
+Done rebuilding in 624ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 316ms
+Filtered out 0 files in 23μs
+Emitted 15 files to `public` in 614ms
+Done rebuilding in 616ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 541ms
+Filtered out 0 files in 27μs
+Emitted 15 files to `public` in 815ms
+Done rebuilding in 816ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 359ms
+Filtered out 0 files in 17μs
+Emitted 13 files to `public` in 502ms
+Done rebuilding in 504ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 524ms
+Filtered out 0 files in 30μs
+Emitted 15 files to `public` in 829ms
+Done rebuilding in 830ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 421ms
+Filtered out 0 files in 33μs
+Emitted 13 files to `public` in 645ms
+Done rebuilding in 646ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 367ms
+Filtered out 0 files in 22μs
+Emitted 15 files to `public` in 610ms
+Done rebuilding in 611ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 248ms
+Filtered out 0 files in 20μs
+Emitted 13 files to `public` in 392ms
+Done rebuilding in 394ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 362ms
+Filtered out 0 files in 17μs
+Emitted 13 files to `public` in 540ms
+Done rebuilding in 545ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 267ms
+Filtered out 0 files in 21μs
+Emitted 15 files to `public` in 506ms
+Done rebuilding in 509ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 344ms
+Filtered out 0 files in 17μs
+Emitted 15 files to `public` in 575ms
+Done rebuilding in 577ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 266ms
+Filtered out 0 files in 20μs
+Emitted 13 files to `public` in 415ms
+Done rebuilding in 416ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 245ms
+Filtered out 0 files in 18μs
+Emitted 13 files to `public` in 385ms
+Done rebuilding in 386ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 262ms
+Filtered out 0 files in 27μs
+Emitted 15 files to `public` in 484ms
+Done rebuilding in 486ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 404ms
+Filtered out 0 files in 14μs
+Emitted 15 files to `public` in 635ms
+Done rebuilding in 636ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 225ms
+Filtered out 0 files in 17μs
+Emitted 13 files to `public` in 392ms
+Done rebuilding in 393ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 375ms
+Filtered out 0 files in 21μs
+Emitted 13 files to `public` in 510ms
+Done rebuilding in 511ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 237ms
+Filtered out 0 files in 33μs
+Emitted 15 files to `public` in 452ms
+Done rebuilding in 454ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 262ms
+Filtered out 0 files in 15μs
+Emitted 15 files to `public` in 465ms
+Done rebuilding in 467ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 229ms
+Filtered out 0 files in 16μs
+Emitted 13 files to `public` in 353ms
+Done rebuilding in 354ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 442ms
+Filtered out 0 files in 34μs
+Emitted 15 files to `public` in 785ms
+Done rebuilding in 787ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 468ms
+Filtered out 0 files in 37μs
+Emitted 13 files to `public` in 699ms
+Done rebuilding in 701ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 317ms
+Filtered out 0 files in 19μs
+Emitted 15 files to `public` in 589ms
+Done rebuilding in 591ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 244ms
+Filtered out 0 files in 23μs
+Emitted 13 files to `public` in 386ms
+Done rebuilding in 387ms
