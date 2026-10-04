@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>江波龙学习工作总结</title><meta charset="utf-8"/><script type="importmap">{"imports":{"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs":"/static/mermaid/11.4.0/mermaid.esm.min.mjs","https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/":"/static/mermaid/11.4.0/"}}</script><link rel="preload" href="../index-58618f56.css" as="style"/><link rel="preload" href="../prescript-ee7931aa.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="苦瓜的笔记"/><meta property="og:title" content="江波龙学习工作总结"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="江波龙学习工作总结"/><meta name="twitter:description" content="2026.09.14 ~ 09.20 本周（2026.09.14 ~ 09.20）围绕两条工作主线展开：设备保养任务录入页面交互优化、需求 597 批次过站报表开发；同步完成工作区清理与多分支部署，并系统学习了 MES 制造执行系统与 SQL 优化知识。 **设备保养任务录入优化：**修复“开始保养”后“数据录入/完成”按钮不亮、必须手动刷新的问题，通过列表刷新监听与自动重选逻辑实现免手动刷新；改动 1 个文件 +21 行，DEV 验证通过、UAT 已推送待验证、PRO 待生产发布。 **需求 597 批次过站报表（未完成）：**完成需求分析、后端开发与性能优化全流程，交付后端 Control..."/><meta property="og:description" content="2026.09.14 ~ 09.20 本周（2026.09.14 ~ 09.20）围绕两条工作主线展开：设备保养任务录入页面交互优化、需求 597 批次过站报表开发；同步完成工作区清理与多分支部署，并系统学习了 MES 制造执行系统与 SQL 优化知识。 **设备保养任务录入优化：**修复“开始保养”后“数据录入/完成”按钮不亮、必须手动刷新的问题，通过列表刷新监听与自动重选逻辑实现免手动刷新；改动 1 个文件 +21 行，DEV 验证通过、UAT 已推送待验证、PRO 待生产发布。 **需求 597 批次过站报表（未完成）：**完成需求分析、后端开发与性能优化全流程，交付后端 Control..."/><meta property="og:image:alt" content="2026.09.14 ~ 09.20 本周（2026.09.14 ~ 09.20）围绕两条工作主线展开：设备保养任务录入页面交互优化、需求 597 批次过站报表开发；同步完成工作区清理与多分支部署，并系统学习了 MES 制造执行系统与 SQL 优化知识。 **设备保养任务录入优化：**修复“开始保养”后“数据录入/完成”按钮不亮、必须手动刷新的问题，通过列表刷新监听与自动重选逻辑实现免手动刷新；改动 1 个文件 +21 行，DEV 验证通过、UAT 已推送待验证、PRO 待生产发布。 **需求 597 批次过站报表（未完成）：**完成需求分析、后端开发与性能优化全流程，交付后端 Control..."/><meta property="twitter:domain" content="shijinghui-dot.github.io"/><meta property="og:url" content="https://shijinghui-dot.github.io/学习笔记/江波龙学习工作总结"/><meta property="twitter:url" content="https://shijinghui-dot.github.io/学习笔记/江波龙学习工作总结"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="2026.09.14 ~ 09.20 本周（2026.09.14 ~ 09.20）围绕两条工作主线展开：设备保养任务录入页面交互优化、需求 597 批次过站报表开发；同步完成工作区清理与多分支部署，并系统学习了 MES 制造执行系统与 SQL 优化知识。 **设备保养任务录入优化：**修复“开始保养”后“数据录入/完成”按钮不亮、必须手动刷新的问题，通过列表刷新监听与自动重选逻辑实现免手动刷新；改动 1 个文件 +21 行，DEV 验证通过、UAT 已推送待验证、PRO 待生产发布。 **需求 597 批次过站报表（未完成）：**完成需求分析、后端开发与性能优化全流程，交付后端 Control..."/><meta name="generator" content="Quartz"/><link href="../index-58618f56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-ee7931aa.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://shijinghui-dot.github.io/学习笔记/江波龙学习工作总结-og-image.webp"/><meta property="og:image:url" content="https://shijinghui-dot.github.io/学习笔记/江波龙学习工作总结-og-image.webp"/><meta name="twitter:image" content="https://shijinghui-dot.github.io/学习笔记/江波龙学习工作总结-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="学习笔记/江波龙学习工作总结" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">苦瓜的笔记</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== 'tags' &amp;&amp; node.slugSegment !== '图片和附件'&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-2" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-2" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../学习笔记/">学习笔记</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>江波龙学习工作总结</a></div></nav><h1 class="article-title">江波龙学习工作总结</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/实习" class="internal internal-link tag-link">实习</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-09-30T09:44:30.000Z">2026年9月30日</time><span>22分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="20260914--0920">2026.09.14 ~ 09.20<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#20260914--0920" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>本周（2026.09.14 ~ 09.20）围绕两条工作主线展开：设备保养任务录入页面交互优化、需求 597 批次过站报表开发；同步完成工作区清理与多分支部署，并系统学习了 MES 制造执行系统与 SQL 优化知识。</p>
+<ul>
+<li>
+<p>**设备保养任务录入优化：**修复“开始保养”后“数据录入/完成”按钮不亮、必须手动刷新的问题，通过列表刷新监听与自动重选逻辑实现免手动刷新；改动 1 个文件 +21 行，DEV 验证通过、UAT 已推送待验证、PRO 待生产发布。</p>
+</li>
+<li>
+<p>**需求 597 批次过站报表（未完成）：**完成需求分析、后端开发与性能优化全流程，交付后端 Controller（+127 行）与报表主 SQL（204 行），修复 14 个典型 BUG，沉淀索引分层与渐进式压测等性能方法论，产出完整复盘文档。</p>
+</li>
+<li>
+<p>**工作区清理与 Git 部署：**还原本地与原始代码差异，规范多分支（DEV/UAT/PRO）部署流程，提交历史干净统一。</p>
+</li>
+<li>
+<p>**学习沉淀：**MES 制造执行系统体系认知、SQL 优化 15 技巧与数据库大数据量处理方法论。</p>
+</li>
+</ul>
+<h2 id="一设备保养任务录入页面交互优化">一、设备保养任务录入页面交互优化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一设备保养任务录入页面交互优化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="1-需求背景">1. 需求背景<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-需求背景" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>页面：设备保养任务录入 machine-tran-pm-task-data-entry-new（左侧保养任务列表 + 右侧保养检查表/数据录入区）。</p>
+<p>原始问题：选择设备点击”开始保养”后，右下角”数据录入”和”完成”按钮不会自动亮起，必须手动刷新整个页面、重新点击任务行才能进入第三步数据录入。</p>
+<p>目标：点击”开始保养”后自动刷新列表、自动选中任务行、自动切换按钮状态，全程无需手动刷新。</p>
+<h3 id="2-根因分析代码链路">2. 根因分析（代码链路）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-根因分析代码链路" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>
+<p>点击”开始保养” → onStartPmButtonTapped → 调 ajx-start-pm-task 接口；</p>
+</li>
+<li>
+<p>成功后 onStartPmTaskAjaxResponse 调 search-form.submitMyForm() 刷新左侧列表 ✅；</p>
+</li>
+<li>
+<p>但列表刷新成功触发 onSearchFormSubmitSuccess → onResetButtonTapped()，清空右侧表单和 resource ❌；</p>
+</li>
+<li>
+<p>原代码没有自动重选逻辑，必须人工再点一次行才会走 onGridDetailTapped → _switchButton 按状态切换按钮。</p>
+</li>
+</ol>
+<p>隐藏坑：若用户筛选了”已创建/已过期”，开始后状态变 STARTED，刷新查询会把该行过滤掉，行直接消失，重选无从谈起。</p>
+<h3 id="3-修复方案1-个文件21-行">3. 修复方案（1 个文件，+21 行）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-修复方案1-个文件21-行" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>改动文件：machine-tran-pm-task-data-entry-new.html，共三处改动。</p>
+<p><strong>改动 1 — 新增事件监听：</strong>‘grid.things-grid-data-changed’: ‘onPmTaskGridDataChanged’，列表数据刷新完成时触发。</p>
+<p>**改动 2 — 开始保养成功回调：**刷新列表前保存整行数据并预置状态：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">._pendingReselectRow </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> Object.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">assign</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">({}, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.resource, { status: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">'STARTED'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> });</span></span></code></pre></figure>
+<p><strong>改动 3 — 新增自动重选方法：</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="javascript" data-theme="github-light github-dark"><code data-language="javascript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">onPmTaskGridDataChanged</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">function</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">event</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">) {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">!</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">._pendingReselectRow) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">    const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> pendingRow</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">._pendingReselectRow;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">    this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">._pendingReselectRow </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">    this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">async</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">        const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> row</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> (event.detail </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">||</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> []).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">find</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> item.id </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">===</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> pendingRow.id) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">||</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> pendingRow;</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">        this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">onGridDetailTapped</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">({ detail: row });</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    }, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">);</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p>设计要点：</p>
+<ul>
+<li>
+<p>async(…, 0) 延迟：保证重选在 onResetButtonTapped 清空动作之后执行，否则重选结果会被清掉；</p>
+</li>
+<li>
+<p>优先取刷新后的最新行；被状态筛选过滤掉时用保存行兜底；</p>
+</li>
+<li>
+<p>复用 onGridDetailTapped，与手动点行行为完全一致（加载保养集、保养项、切换按钮、查附件）。</p>
+</li>
+</ul>
+<h3 id="4-调试过程中解决的坑">4. 调试过程中解决的坑<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-调试过程中解决的坑" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>问题</th><th>解决</th></tr></thead><tbody><tr><td>一开始改错页面（旧页面 machine-maintainance-entries）</td><td>发现后改到正确页面，误改文件还原</td></tr><tr><td>手动造测试数据报后端错 keys count and values count mismatch</td><td>改用已有已过期任务测试</td></tr><tr><td>重选被清空回调覆盖</td><td>async 延迟 0ms</td></tr><tr><td>状态筛选导致行消失</td><td>保存行兜底</td></tr><tr><td>浏览器缓存旧代码</td><td>Ctrl+F5 强刷</td></tr><tr><td>后端报 AAT-0044（无设备事件 SD_PM 操作权限）</td><td>与前端无关，后端 MachEventService.checkEventRole 校验角色权限，配置授权后解决</td></tr></tbody></table></div>
+<h3 id="5-工作区清理让本地与原始代码一致">5. 工作区清理（让本地与原始代码一致）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-工作区清理让本地与原始代码一致" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p>package.json：之前为本地启动升级过 gulp（3.8→4.0），确认本地 node_modules 本就是 gulp 3.9.1 后还原为原始版本；</p>
+</li>
+<li>
+<p>删除 gulpfile.js.bak、package.json.bak 两个备份；</p>
+</li>
+<li>
+<p>machine-maintainance-entries.html：内容已还原，仅剩行尾符差异，手动 git checkout 还原；</p>
+</li>
+<li>
+<p>保留在本地未提交：批次过站报表 cwip-query-lot-pass-report.html（新增 301 行）+ elements.html（+2 行 import 注册）、package-lock.json 等。</p>
+</li>
+</ul>
+<h3 id="6-git-提交与多分支部署">6. Git 提交与多分支部署<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-git-提交与多分支部署" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>fix 分支提交 c688e70af，只含保养 html 一个文件 +21 行（最初作者是 TRAE）。部署分发过程如下：</p>
+<ol>
+<li>
+<p>最初用 merge：分别 merge 进 PRO_1 和 DEV_NEW，PRO_1 合并时有冲突（order-setup-work-order-master.html 等无关文件，全部 Accept Left 保留主线版本）；</p>
+</li>
+<li>
+<p>撤销 merge、改用更干净的方式：PRO_1 用 git reset —hard origin/PRO_1、DEV_NEW 用 reset —hard HEAD~1；</p>
+</li>
+<li>
+<p>改用 cherry-pick：git cherry-pick -n c688e70af 只搬改动不搬提交</p>
+</li>
+<li>
+<p>用什么命令才能看当前commit但是还未push的内容</p>
+</li>
+</ol>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="Plain" data-theme="github-light github-dark"><code data-language="Plain" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>确认暂存内容是不是你要的</span></span>
+<span data-line><span>git diff --cached --stat</span></span>
+<span data-line><span>满意就提交（-n 不会自动带原提交信息，需要自己写）</span></span>
+<span data-line><span>git commit -m &quot;你的提交信息&quot;</span></span>
+<span data-line><span>不想要了就撤销</span></span>
+<span data-line><span>git restore --staged app/elements/biz-bundles/ui/etcm/machine-tran-pm-task-data-entry-new.html</span></span>
+<span data-line><span>git checkout -- app/elements/biz-bundles/ui/etcm/machine-tran-pm-task-data-entry-new.html</span></span></code></pre></figure>
+<ol start="5">
+<li>
+<p>DEV_NEW：push 被拒（远程有别人新提交）→ git pull —rebase origin DEV_NEW → push 成功 → Jenkins #761 构建成功 → 测试环境 Ctrl+F5 后验证通过；</p>
+</li>
+<li>
+<p>UAT_1：checkout 时报 .git/index.lock 锁文件残留（之前 git 进程崩溃留下）→ 删除锁文件 → 切分支成功 → 同样 cherry-pick + 自定义身份 commit → push（只提交那一个 html，其他本地改动不带）；</p>
+</li>
+<li>
+<p>PRO_1：已撤销 merge，尚未推送，命令已备好待生产发布时用。</p>
+</li>
+</ol>
+<h2 id="二需求-597批次过站报表开发未完成">二、需求 597：批次过站报表开发（未完成）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二需求-597批次过站报表开发未完成" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>MES 中批次（Lot）沿工艺路线逐工序流动，每经过一个工序完成一次加工/测试，称为一次”过站”。本需求为生产/品质人员提供批次过站履历查询界面，支持按批次号、工单、工厂工单、工序、产线、进站/出站时间等维度查询，共 20 余个输出字段（含需求中途新增的初测/终测工位、BIN 分布、不良代码等）。本周完成从需求分析、后端开发到性能优化的全流程，并产出完整开发复盘文档（已存知识库《597-lot-pass-report-full-review.md》）。</p>
+<p>**交付内容：**后端 LotYieldReportController（+127 行）与报表主 SQL（204 行，classpath 文件加载）；数据模型涉及 2 张核心事实表（lot_oper_yields、lot_oper_retests）+ 3 张 BIN/不良明细表 + 8 张维度表。</p>
+<p>**需求纠偏（重要教训）：**一是数据源口径错误——最初误解为”在制报表”（数据源设计为 lots 表），实际是过站履历查询（应为 lot_oper_yields + lot_oper_retests），spec 评审阶段必须先与业务方对齐数据口径再谈实现；二是前端避免重复造轮子——第一版 spec 试图从零写前端页面，实际项目已有按正确规范实现的页面，最终复用前端、只补后端接口，动手前先搜索项目内是否已有实现。另有需求中途变更：新增”初测工位 + 终测工位”两列（批次在一个工序可能测试多次，第一次为初测、最后一次为终测）。</p>
+<p>**关键设计决策：**SQL 放 classpath 文件而非 diy_services 表（service_logic 字段长度存不下 200+ 行 SQL；文件方式可版本控制、可 review、IDE 支持语法检查、随 jar 部署生效）；分页的两条 SQL（取当页数据 + count 总数）用 CompletableFuture 并行执行，耗时从两者之和降为约 max(两者)；库中时间为 YYYYMMDDHHMMSS 字符串格式（多个 BUG 的根源），统一用 to_timestamp 转换比较。</p>
+<p><strong>14 个典型 BUG 与修复：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>#</th><th>问题</th><th>解决方案</th></tr></thead><tbody><tr><td>1</td><td>需求理解成”在制报表”，数据口径未对齐</td><td>数据源改为 lot_oper_yields + lot_oper_retests</td></tr><tr><td>2</td><td>spec 不符合前端规范，试图重写页面</td><td>复用已有 cwip-query-lot-pass-report.html，只补后端</td></tr><tr><td>3</td><td>diy_services 存不进 SQL</td><td>改 classpath 文件方案</td></tr><tr><td>4</td><td>Filter import 编译错误（包路径写错）</td><td>改为 xyz.elidom.dbist.dml.Filter</td></tr><tr><td>5</td><td>JOIN 类型不匹配报错（bigint vs varchar）</td><td>加 ::varchar 转换</td></tr><tr><td>6</td><td>between 时间过滤不生效（框架不解析 + 格式不一致）</td><td>新增 resolveBetweenTimeField()，拆 _start/_end 并转格式</td></tr><tr><td>7</td><td>查出站时段混入 NULL 记录</td><td>SQL 显式加 end_time is not null</td></tr><tr><td>8</td><td>终测工位大量为空（只测一次的批次无”终测”）</td><td>COALESCE 用初测工位兜底</td></tr><tr><td>9</td><td>车间列为空（原始数据问题，70/279 工单未关联产线）</td><td>给出隐藏列/显示产线名/保持现状三个选项</td></tr><tr><td>10</td><td>一次不良代码是硬编码空串</td><td>改为真实查询 lot_error_code_bin_seq_traces</td></tr><tr><td>11</td><td>建索引报 cannot run inside a transaction block</td><td>提供去掉 CONCURRENTLY 的简化版 SQL</td></tr><tr><td>12</td><td>column “oid” does not exist（PG12+ 系统表无 oid）</td><td>改用 pg_indexes 视图验证</td></tr><tr><td>13</td><td>push 被拒（UAT_1 是受保护分支）</td><td>改走 MR 流程（个人分支 → MR → review → 合并）</td></tr><tr><td>14</td><td>cherry-pick 冲突（本地未提交修改会被覆盖）</td><td>先 git stash 暂存再 pick</td></tr></tbody></table></div>
+<p>**性能优化：**索引分层策略——P0 核心单列索引（两张事实表的 lot_id、start_time、wo_id，实测建完后查询时间毫秒级）、P1 复合索引（出现明确”批次+时间”组合查询模式时再加，遵循最左前缀）、P2 覆盖索引（极致优化一般不必，维护成本高）。知识点：CREATE INDEX CONCURRENTLY 不锁表但不能在事务块内执行，IDEA 数据库工具默认包事务导致报错，改用简化版脚本。</p>
+<p>**性能评估方法论：**渐进式压测法——用 generate_series 造数，按 1k → 1w → 10w → 50w 逐级放大，耗时线性增长（O(n)）为健康、超线性陡增说明出现瓶颈（排序落盘、JOIN 退化、统计信息失真）；必测 5 类场景：无过滤全量、仅时间范围、批次号、组合条件、深分页；用 EXPLAIN (ANALYZE, BUFFERS) 分析执行计划（Seq Scan vs Index Scan、rows 估算与实际偏差、Sort/Hash 是否超出内存落盘）；本 SQL 本质是多表 JOIN + 聚合，主导成本是参与聚合的行数。</p>
+<p>**Git 工作流：**DEV_1（开发）→ UAT_1（验收）→ PRO_1（生产），主干分支全部受保护、禁止直接 push，必须走个人功能分支 → GitLab 网页创建 MR → 代码审查 → 有权限者合并；commit message 规范 type(scope): subject（feat / fix / refactor / docs / test）；本次轨迹：c51c1f384（原始提交，feat/20260916_lot_pass_report）→ cherry-pick 至 DEV_1（已推送）、UAT_1（push 被拒，待走 MR）。</p>
+<p>**主要知识点沉淀：**PostgreSQL/SQL（UNION ALL 合并不去重、CTE 两层拆解、::varchar 跨类型 JOIN、to_timestamp 字符串时间转换、nullif 防除零、COALESCE 空值兜底、窗口函数 min/max over(partition by) 标记初测终测、dense_rank 同批次奇偶行标色、string_agg 拼串、unnest + string_to_array 多批次拆分、EXPLAIN 执行计划分析）；Java/Spring（CompletableFuture 并行编排、降级式异常处理）；前端（Polymer 2 + things-* 组件 + DataLudi 表格分组变色、组件注册 + 菜单配置两步接入）。</p>
+<h2 id="三本周学习">三、本周学习<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#三本周学习" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="1-mes-制造执行系统">1. MES 制造执行系统<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-mes-制造执行系统" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>**系统定位：**MES（Manufacturing Execution System，制造执行系统）由美国先进制造研究机构 AMR 于 20 世纪 80 年代末提出，是应用在生产执行层的工业管理软件。工厂信息化五层模型：第 0 层业务（车间活动）→ 第 1 层数据采集硬件（传感器、扫描仪、RFID，现实工厂与虚拟工厂的界面）→ 第 2 层采集软件（PLC、DCS、SCADA，工站级/车间级）→ 第 3 层执行层（MES、WMS、物流系统）→ 第 4 层计划层（ERP、MRP、CRM）；MES 承上启下，需同时设计对计划层与采集层的接口，生产流程中 90% 以上的原始数据首先存在 MES。</p>
+<p>**MES 周边系统：**EAP（设备自动化控制，给机台下指令、采集工艺特性参数与加工特性参数）；RMS（配方管理系统，卡控工艺特性参数，如上料时确认机台内菜单设置是否在 SOP 规范内）；FDC（故障侦测系统，卡控加工特性参数）；APC（先进制程控制，跨工序参数调优）；SPC（统计过程控制，计算 CP/CPK 量化过程能力）；RTD（实时派工系统，与天车、AGV 搭配）；YMS（良率管理系统，半导体行业叫法，Map 叠图分析）；QMS（质量管理系统，离散制造叫法）；WMS（仓储管理系统）。MES 需要与所有系统集成。</p>
+<p>**MES 十一大功能模块：**数据采集、履历与历史、工作流指派、过程管理（防呆与预警）、生产调度、过程执行分析、资源管理、维修管理、人力资源管理、文档管理、计划管理。</p>
+<p>**核心思想：**MES 的核心是对生产业务的建模——静态建模（车间、流水线、工站、设备、治具、产品的定义与勾连关系）+ 动态建模（搬运、加工、储存、检查、收料、发货六大基本活动），相当于在程序世界搭建一座”线上工厂”，物料在线上工厂的流转就相当于实际工厂的加工。它的价值定位是反映现场实时情况、警示”计划中的事情没有发生”以及”发生了哪些计划之外的情况”，而非直接提升效率、降低成本。信息化建设生命周期：流程化 → 标准化 → 信息化 → 可视化 → 数据化 → 智能化，最终目标是智能工厂。</p>
+<p>**批次管理与生产追溯：**MES 批次管理实现生产全流程数据闭环——批次与物料、工艺、设备、人员、BOM、工单、质检全面关联，扫码/RFID 实时采集入库，追溯查询秒级定位，支持召回管理与合规报表自动生成；典型应用于食品、医药、汽车、电子制造行业。选型参考：专业 MES（用友、金蝶精益）批次管控细致，适合复杂工艺与大型制造，但开发周期长、成本高；ERP 的批次管理集中在物料/财务维度，生产过程追溯支持有限；零代码平台（简道云等）胜在灵活快速、成本低，适合业务变化快的中小制造企业。</p>
+<h3 id="2-sql-优化与数据库大数据量处理">2. SQL 优化与数据库大数据量处理<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-sql-优化与数据库大数据量处理" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SQL 优化 15 个小技巧：</strong></p>
+<ol>
+<li>
+<p>避免 select *：只查需要的列，select * 不走覆盖索引，会出现大量回表；</p>
+</li>
+<li>
+<p>用 union all 代替 union：排重需要遍历、排序和比较，能不用 union 就不用；</p>
+</li>
+<li>
+<p>小表驱动大表：in 适合左边大表右边小表，exists 适合左边小表右边大表；</p>
+</li>
+<li>
+<p>批量操作：一次插入多值代替循环单条插入，每批控制在 500 条以内；</p>
+</li>
+<li>
+<p>多用 limit：查首条加 limit 1；判断”存在”用 select 1 … limit 1 代替 count(*)；</p>
+</li>
+<li>
+<p>in 中值太多：业务层限制数量并分批查询；</p>
+</li>
+<li>
+<p>增量查询：记录上次最大 id 和时间，每批只同步一小段数据；</p>
+</li>
+<li>
+<p>高效分页：避免 limit 1000000,20 深分页（数据库要先扫过再丢弃前 100w 条），改用 where id > 上次最大 id 或 between 唯一索引定位；</p>
+</li>
+<li>
+<p>用连接查询代替子查询：子查询需要创建临时表再删除，有额外性能消耗；</p>
+</li>
+<li>
+<p>join 的表不宜过多：阿里规范不超过 3 张，可用冗余字段代替多表关联；</p>
+</li>
+<li>
+<p>join 注意：inner join 时 MySQL 自动选小表驱动大表；left join 用左边的表驱动右边的表，左边要用小表；</p>
+</li>
+<li>
+<p>控制索引数量：单表索引尽量 5 个以内、单个索引字段不超过 5 个，能建联合索引就不建单个索引；</p>
+</li>
+<li>
+<p>选择合理的字段类型：长度固定用 char、长度可变用 varchar、金额用 decimal，能用数字类型就不用字符串；</p>
+</li>
+<li>
+<p>提升 group by 效率：先用 where 缩小数据范围再分组，而不是分组后再 having 过滤；</p>
+</li>
+<li>
+<p>索引优化：用 explain 查看执行计划，检查 SQL 是否命中索引、索引是否失效。</p>
+</li>
+</ol>
+<p>**数据库百万级数据处理：**核心观点是”100w 条数据不是决策依据，业务访问模型才是”。先做 4 个判断定位瓶颈：慢的是单条查询还是列表、是读还是写、是高峰期还是一直慢、是数据库本身还是应用层调用方式；再按顺序优化：SQL 与索引（贴合高频查询条件、联合索引最左匹配、避免索引失效）→ 深分页（改游标/主键翻页）→ 批量操作（拆小批次控制事务大小，按主键范围分段执行）→ 冷热分离（历史数据归档到历史表）→ 最后才考虑分库分表。避免 4 个误区：把慢都归因于数据量、一上来就分库分表、只盯数据库不看应用调用方式（重复查询、N+1、缓存缺失、导出直接打在线库）、优化动作没有验证闭环。</p>
+<p><strong>学习来源：</strong></p>
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/guoqi_666/article/details/122484535" class="external external-link">sql优化的15个小技巧（必知五颗星）- CSDN<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/weixin_52213728/article/details/133041258" class="external external-link">万字长文讲透MES，小白入门必看 - CSDN<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="https://www.jiandaoyun.com/news/article/68a84576229b892d52ce503d" class="external external-link">MES系统批次管理：让生产追溯不再难 - 简道云<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+<li>
+<p><a href="https://docs.pingcode.com/insights/b3no4ad3wxv6zp1db6g5vf5u" class="external external-link">数据库100w条数据该怎么处理 - PingCode<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+</li>
+</ul>
+<h1 id="20260921--0930">2026.09.21 ~ 09.30<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#20260921--0930" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="一本周学习">一、本周学习<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一本周学习" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="mysql">MySQL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysql" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><a href=".././../数据库/mysql实战45讲面试题精选" class="internal internal-link alias" data-slug="数据库/mysql实战45讲面试题精选">MySQL实战45讲面试题精选</a></p>
+<h2 id="二本周工作">二、本周工作<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二本周工作" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h4 id="1页面紧凑优化">1、页面紧凑优化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1页面紧凑优化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><img src=".././../图片和附件/image-1.png" alt="image.png|613"/></p>
+<h4 id="2设备保养日历自动刷新">2、设备保养日历自动刷新<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2设备保养日历自动刷新" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><img src=".././../图片和附件/image-2.png" alt="image.png|613"/></p>
+<h4 id="3支持24h手动输入">3、支持24H手动输入<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3支持24h手动输入" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><img src=".././../图片和附件/image.png" alt="image.png"/></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-1" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#20260914--0920" data-for="20260914--0920">2026.09.14 ~ 09.20</a></li><li class="depth-1"><a href="#一设备保养任务录入页面交互优化" data-for="一设备保养任务录入页面交互优化">一、设备保养任务录入页面交互优化</a></li><li class="depth-2"><a href="#1-需求背景" data-for="1-需求背景">1. 需求背景</a></li><li class="depth-2"><a href="#2-根因分析代码链路" data-for="2-根因分析代码链路">2. 根因分析（代码链路）</a></li><li class="depth-2"><a href="#3-修复方案1-个文件21-行" data-for="3-修复方案1-个文件21-行">3. 修复方案（1 个文件，+21 行）</a></li><li class="depth-2"><a href="#4-调试过程中解决的坑" data-for="4-调试过程中解决的坑">4. 调试过程中解决的坑</a></li><li class="depth-2"><a href="#5-工作区清理让本地与原始代码一致" data-for="5-工作区清理让本地与原始代码一致">5. 工作区清理（让本地与原始代码一致）</a></li><li class="depth-2"><a href="#6-git-提交与多分支部署" data-for="6-git-提交与多分支部署">6. Git 提交与多分支部署</a></li><li class="depth-1"><a href="#二需求-597批次过站报表开发未完成" data-for="二需求-597批次过站报表开发未完成">二、需求 597：批次过站报表开发（未完成）</a></li><li class="depth-1"><a href="#三本周学习" data-for="三本周学习">三、本周学习</a></li><li class="depth-2"><a href="#1-mes-制造执行系统" data-for="1-mes-制造执行系统">1. MES 制造执行系统</a></li><li class="depth-2"><a href="#2-sql-优化与数据库大数据量处理" data-for="2-sql-优化与数据库大数据量处理">2. SQL 优化与数据库大数据量处理</a></li><li class="depth-0"><a href="#20260921--0930" data-for="20260921--0930">2026.09.21 ~ 09.30</a></li><li class="depth-1"><a href="#一本周学习" data-for="一本周学习">一、本周学习</a></li><li class="depth-2"><a href="#mysql" data-for="mysql">MySQL</a></li><li class="depth-1"><a href="#二本周工作" data-for="二本周工作">二、本周工作</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/shijinghui-dot">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-ecfa1a2c.js" type="module" data-persist="true"></script></html>
