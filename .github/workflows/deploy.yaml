@@ -52,6 +52,16 @@ jobs:
       - name: Build Quartz
         run: npx quartz build
 
+      # 新增歌曲后刷新 jsDelivr 的文件缓存（@main 分支默认缓存最长 12 小时）
+      - name: Purge jsDelivr cache for music files
+        continue-on-error: true
+        run: |
+          for f in quartz/static/music/*; do
+            name=$(basename "$f")
+            enc=$(python3 -c "import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))" "$name")
+            curl -sf "https://purge.jsdelivr.net/gh/shijinghui-dot/shijinghui-dot.github.io@main/quartz/static/music/$enc" > /dev/null || true
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

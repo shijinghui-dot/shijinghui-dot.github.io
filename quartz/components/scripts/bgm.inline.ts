@@ -1,14 +1,17 @@
 /**
  * 背景音乐：首次交互后自动播放，右下角喇叭按钮控制静音/恢复
- * 曲目列表：构建时由 Static 发射器扫描 quartz/static/music/ 生成 manifest.json，
- * 此处运行时读取。之后往 music 文件夹里丢音频文件即可，无需改代码。
+ * 曲目列表：构建时由 Static 发射器扫描 quartz/static/music/ 生成 manifest.json，运行时读取。
+ * 音频优先走 jsDelivr CDN（GitHub Pages 的音频流在国内又慢又不稳），失败自动回退站点自身。
  */
 
 const BGM_KEY = "bgm-muted"
 const MUSIC_DIR = "/static/music"
+const CDN_BASE =
+  "https://cdn.jsdelivr.net/gh/shijinghui-dot/shijinghui-dot.github.io@main/quartz/static/music"
 
-let playlist: string[] = []
+let names: string[] = []
 let index = 0
+let stage = 0 // 0 = jsDelivr CDN，1 = 站点自身
 let failedCount = 0
 let playlistReady = false
 let interacted = false
@@ -34,26 +37,44 @@ function setupBgm() {
     btn.classList.toggle("muted", audio.paused)
   }
 
-  const playNext = () => {
-    index = (index + 1) % playlist.length
-    audio.src = playlist[index]
-    audio.play().catch(() => {})
-  }
+  const urlFor = (n: string) =>
+    (stage === 0 ? CDN_BASE : MUSIC_DIR) + "/" + encodeURIComponent(n)
 
-  audio.addEventListener("ended", playNext)
-  // 某个文件损坏/缺失时自动跳下一首；全部失败则隐藏按钮
+  const loadIndex = (i: number) => {
+    index = i
+    audio.src = urlFor(names[index])
+  }
+  const loadNext = () => loadIndex((index + 1) % names.length)
+
+  audio.addEventListener("ended", () => {
+    loadNext()
+    audio.play().catch(() => {})
+  })
+  // 加载失败：CDN 失败先回退站点自身；再失败则该曲目计为失败并跳下一首；全部失败隐藏按钮
   audio.addEventListener("error", () => {
+    console.error("[BGM] 音频加载失败:", audio.src, "code:", audio.error?.code, audio.error?.message)
+    if (stage === 0) {
+      stage = 1
+      loadIndex(index)
+      tryAutoplay()
+      return
+    }
+    stage = 0 // 下一首仍先尝试 CDN
     failedCount++
-    if (failedCount >= playlist.length) {
+    if (failedCount >= names.length) {
       btn.style.display = "none"
       return
     }
-    playNext()
+    loadNext()
+    tryAutoplay()
   })
   audio.addEventListener("play", () => {
-    failedCount = 0
     localStorage.setItem(BGM_KEY, "0")
     render()
+  })
+  // 真正开始出声才算播放成功，重置失败计数（play 事件在数据加载前就会触发）
+  audio.addEventListener("playing", () => {
+    failedCount = 0
   })
   audio.addEventListener("pause", () => {
     localStorage.setItem(BGM_KEY, "1")
@@ -83,13 +104,13 @@ function setupBgm() {
   fetch(`${MUSIC_DIR}/manifest.json`)
     .then((res) => res.json())
     .then((tracks: string[]) => {
-      playlist = [...tracks].sort(() => Math.random() - 0.5) // 随机播放顺序（洗牌）
-      if (playlist.length === 0) {
+      names = [...tracks].sort(() => Math.random() - 0.5) // 随机播放顺序（洗牌）
+      if (names.length === 0) {
         btn.style.display = "none"
         return
       }
       playlistReady = true
-      audio.src = playlist[0]
+      loadIndex(0)
       tryAutoplay()
     })
     .catch(() => {
