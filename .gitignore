@@ -2,3 +2,8 @@
 content/.obsidian/workspace.json
 content/.obsidian/workspace-mobile.json
 content/.obsidian/workspace.json.bak
+
+# 构建产物：GitHub Actions 每次部署都会重新生成，不进版本库
+public/
+quartz/.quartz-cache/
+
