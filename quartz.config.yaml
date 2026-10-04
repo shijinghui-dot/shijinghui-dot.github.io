@@ -240,8 +240,9 @@ plugins:
     options:
       limit: 5
     layout:
-      position: left
-      priority: 55
+      position: afterBody
+      priority: 10
+      condition: index
   - source: "@quartz-community/spacer"
     enabled: true
     options: {}
