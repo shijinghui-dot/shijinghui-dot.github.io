@@ -1,0 +1,206 @@
+{
+  "main": {
+    "id": "64f53defb664670c",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b82e300feb175a9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "49878d2051a211c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2026-09-30.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-09-30"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "548b1cd92372ffab",
+    "type": "split",
+    "children": [
+      {
+        "id": "dca49e83ace3cee8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "017df2585f346d1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e2e87b73692dcd3b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "1a156615309e65c8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e75a5ab1c7913b69",
+    "type": "split",
+    "children": [
+      {
+        "id": "da8ccc83f0f62b6f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d8b86593f6ff758",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2026-09-30.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "ad807e02c4100da2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/数据库/MySQL实战45讲面试题精选.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from MySQL实战45讲面试题精选"
+            }
+          },
+          {
+            "id": "513c81bd9ccd2a49",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "b3132e6d5c6ad9e5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2026-09-30.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "49878d2051a211c7",
+  "lastOpenFiles": [
+    "README.md",
+    "CODE_OF_CONDUCT.md",
+    "数据库.md",
+    "content/数据库/MySQL实战45讲面试题精选.md",
+    "未命名.base",
+    "Untitled.md",
+    "发布.ps1",
+    "content/index.md",
+    "public/数据库/index-og-image.webp",
+    "public/index-og-image.webp",
+    "public/static/giscus/dark.css",
+    "public/static/giscus/light.css",
+    "public/static/giscus",
+    "public/static/og-image.png",
+    "public/static/icon.png",
+    "public/static/contentIndex.json",
+    "public/index.xml",
+    "public/favicon.ico",
+    "public/CNAME",
+    "public/sitemap.xml",
+    "public/tags/指南-og-image.webp",
+    "public/tags/mysql-og-image.webp",
+    "public/tags/index-og-image.webp",
+    "public/笔记指南/写作功能演示-og-image.webp",
+    "public/笔记指南/index-og-image.webp",
+    "public/数据库/mysql实战45讲面试题精选-og-image.webp",
+    "content/笔记指南/写作功能演示.md",
+    "content/数据库/Untitled.md",
+    "2026-09-30.md"
+  ]
+}

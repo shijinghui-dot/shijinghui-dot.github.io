@@ -1,0 +1,8 @@
+{
+  "id": "image-resize",
+  "name": "Image Resize (Alt+滚轮/拖拽)",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "在编辑器中用 Alt+滚轮 或 Alt+拖拽 调整图片大小，宽度自动写回 Markdown 的 |宽度 语法",
+  "isDesktopOnly": false
+}
